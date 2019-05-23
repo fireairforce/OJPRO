@@ -8,7 +8,7 @@ import './index.less'
 import { randomNumBoth } from 'utils/numberAbout'
 import { colorArr } from 'utils/theme'
 
-const Description = ({detail = {tags: []}}) => {
+const Description = ({detail = {tags: []}, children}) => {
   return (
     <div className='problem-description'>
       <h3>题目描述</h3>
@@ -23,6 +23,7 @@ const Description = ({detail = {tags: []}}) => {
       <Card bodyStyle={{padding: 10}} style={{marginBottom: 10}}>
         <Markdown content={detail.output} />
       </Card>
+      {children}
       {detail.tags.length > 0 && (
         <div className='mb-10'>
           <h3>标签</h3>
